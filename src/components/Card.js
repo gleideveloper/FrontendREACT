@@ -15,9 +15,8 @@ const CardBody = () =>{
         <div className="card">
             <CardImage/>
             <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</p>
+                <h5 className="card-title">Nome: </h5>
+                <h5 className="card-title">Preço: </h5>
             </div>
         </div>
     );
@@ -26,10 +25,7 @@ const CardBody = () =>{
 class Card extends Component {
     render() {
         return (
-            <div className="row row-cols-1 row-cols-md-4 g-2">
-                <div className="col">
-                    <CardBody/>
-                </div>
+            <div className="row row-cols-1 row-cols-md-3 g-2">
                 <div className="col">
                     <CardBody/>
                 </div>
