@@ -23,7 +23,7 @@ class App extends Component {
         ]
         return (
             <div className="container text-center">
-                <CardList characterData={cardList}/>
+                <CardList DataList={cardList}/>
             </div>
         )
     }
