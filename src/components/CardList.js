@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-const CardImage = ({ imageSrc }) => {
+const CardImage = ({imageSrc}) => {
     return (
         <svg
             className="bd-placeholder-img card-img-top"
@@ -14,15 +14,15 @@ const CardImage = ({ imageSrc }) => {
         >
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#868e96"></rect>
-            <image href={imageSrc} width="100%" height="100%" />
+            <image href={imageSrc} width="100%" height="100%"/>
         </svg>
     );
 };
 
-const CardBody = ({ item }) => {
+const CardBody = ({item}) => {
     return (
         <div className="card">
-            <CardImage imageSrc={item.imageSrc} />
+            <CardImage imageSrc={item.imageSrc}/>
             <div className="card-body">
                 <h5 className="card-title">Nome: {item.name}</h5>
                 <h5 className="card-title">Preço: {item.price}</h5>
@@ -37,7 +37,7 @@ class CardList extends Component {
             <div className="row row-cols-1 row-cols-md-3 g-2">
                 {this.props.characterData.map((item, index) => (
                     <div className="col" key={index}>
-                        <CardBody item={item} />
+                        <CardBody item={item}/>
                     </div>
                 ))}
             </div>

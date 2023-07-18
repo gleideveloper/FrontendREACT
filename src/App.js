@@ -20,10 +20,25 @@ class App extends Component {
                 price: "$30",
                 imageSrc: "https://www.svgrepo.com/show/269884/transportation-big.svg"
             },
+            {
+                name: "Produto 4",
+                price: "$40",
+                imageSrc: "https://www.svgrepo.com/show/269884/transportation-big.svg"
+            },
+            {
+                name: "Produto 5",
+                price: "$50",
+                imageSrc: "https://www.svgrepo.com/show/269884/transportation-big.svg"
+            },
+            {
+                name: "Produto 6",
+                price: "$60",
+                imageSrc: "https://www.svgrepo.com/show/269884/transportation-big.svg"
+            },
         ]
         return (
             <div className="container text-center">
-                <CardList DataList={cardList}/>
+                <CardList characterData={cardList}/>
             </div>
         )
     }
