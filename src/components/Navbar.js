@@ -12,7 +12,7 @@ const NavbarDropdownList = () => {
         </ul>
     );
 }
-const NavbarItemList = () => {
+const NavbarItemList = ({ cartItemCount }) => {
     return (
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -31,6 +31,12 @@ const NavbarItemList = () => {
                 </a>
                 <NavbarDropdownList/>
             </li>
+            <li className="nav-item">
+                {/* eslint-disable-next-line*/}
+                <a className="nav-link" href="#cart">
+                    Carrinho ({cartItemCount})
+                </a>
+            </li>
         </ul>
     );
 }
@@ -44,29 +50,35 @@ const NavbarFormSearch = () => {
         </form>
     );
 }
-const NavbarBodyContent = () => {
+const NavbarBodyContent = ({ cartItemCount }) => {
     return (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <NavbarItemList/>
-            <NavbarFormSearch/>
+            <NavbarItemList cartItemCount={cartItemCount} />
+            <NavbarFormSearch />
         </div>
     );
-}
-const NavbarBody = () => {
+};
+
+const NavbarBody = ({ cartItemCount }) => {
     return (
         <div className="container-fluid">
             {/* eslint-disable-next-line*/}
-            <a className="navbar-brand" href="#">Navbar</a>
-            <NavbarBodyContent/>
+            <a className="navbar-brand" href="#">
+                Navbar
+            </a>
+            <NavbarBodyContent cartItemCount={cartItemCount} />
         </div>
     );
-}
+};
 
 class Navbar extends Component {
     render() {
-        return (<nav className="navbar navbar-expand-lg bg-primary">
-            <NavbarBody/>
-        </nav>)
+        const {cartItemCount} = this.props;
+        return (
+            <nav className="navbar navbar-expand-lg bg-primary">
+                <NavbarBody cartItemCount={cartItemCount}/>
+            </nav>
+        );
     }
 }
 
