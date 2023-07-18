@@ -39,10 +39,13 @@ class CardBody extends Component {
 
 class Card extends Component {
     render() {
-        const {item} = this.props;
+        const {item, addToCart} = this.props;
         return (
             <div className="col">
                 <CardBody item={item}/>
+                <button className="btn btn-primary" onClick={addToCart}>
+                    Adicionar ao Carrinho
+                </button>
             </div>
         );
     }
