@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import CardList from "./components/CardList";
+import Navbar from "./components/Navbar";
 
 class App extends Component {
 
@@ -38,7 +39,10 @@ class App extends Component {
         ]
         return (
             <div className="container text-center">
-                <CardList characterData={cardList}/>
+                <Navbar/>
+                <div className="mt-2">
+                    <CardList characterData={cardList} />
+                </div>
             </div>
         )
     }
