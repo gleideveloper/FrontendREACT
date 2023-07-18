@@ -1,46 +1,29 @@
 import React, {Component} from 'react'
-import Table from './components/Table'
+import CardList from "./components/CardList";
 
 class App extends Component {
 
-    state = {
-        fieldsBody: [
-            {
-                name: 'Nat',
-                email: 'nat@mail.com'
-            },
-            {
-                name: 'João',
-                email: 'joao@mail.com'
-            },
-            {
-                name: 'José',
-                email: 'jose@mail.com'
-            },
-            {
-                name: 'Anna',
-                email: 'anna@mail.com'
-            },
-        ],
-    }
-
-    removeCharacter = (index) => {
-        const {fieldsBody} = this.state
-
-        this.setState({
-            fieldsBody: fieldsBody.filter((character, i) => {
-                return i !== index
-            }),
-        })
-    }
-
     render() {
-
-        const {fieldsBody} = this.state
-
+        const cardList= [
+            {
+                name: "Produto 1",
+                price: "$10",
+                imageSrc: "https://www.svgrepo.com/show/269884/transportation-big.svg"
+            },
+            {
+                name: "Produto 2",
+                price: "$20",
+                imageSrc: "https://www.svgrepo.com/show/269884/transportation-big.svg"
+            },
+            {
+                name: "Produto 3",
+                price: "$30",
+                imageSrc: "https://www.svgrepo.com/show/269884/transportation-big.svg"
+            },
+        ]
         return (
             <div className="container text-center">
-                <Table characterData={fieldsBody} removeCharacter={this.removeCharacter}/>
+                <CardList characterData={cardList}/>
             </div>
         )
     }
