@@ -1,45 +1,51 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
-const CardImage = () => {
-    return (
-        <svg className="bd-placeholder-img card-img-top" width="100%" height="140"
-             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#868e96"></rect>
-            <image href="https://www.svgrepo.com/show/269884/transportation-big.svg" width="100%" height="100%"/>
-        </svg>
-
-    );
+class CardImage extends Component {
+    render() {
+        const {imageSrc} = this.props;
+        return (
+            <svg
+                className="bd-placeholder-img card-img-top"
+                width="100%"
+                height="140"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Image cap"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+            >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <image href={imageSrc} width="100%" height="100%"/>
+            </svg>
+        );
+    }
 }
 
-const CardBody = () => {
-    return (
-        <div className="card">
-            <CardImage/>
-            <div className="card-body">
-                <h5 className="card-title">Nome: </h5>
-                <h5 className="card-title">Preço: </h5>
+class CardBody extends Component {
+    render() {
+        const {item} = this.props;
+        return (
+            <div className="card">
+                <CardImage imageSrc={item.imageSrc}/>
+                <div className="card-body">
+                    <h5 className="card-title">Nome: {item.name}</h5>
+                    <h5 className="card-title">Preço: {item.price}</h5>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 class Card extends Component {
     render() {
+        const {item} = this.props;
         return (
-            <div className="row row-cols-1 row-cols-md-3 g-2">
-                <div className="col">
-                    <CardBody/>
-                </div>
-                <div className="col">
-                    <CardBody/>
-                </div>
-                <div className="col">
-                    <CardBody/>
-                </div>
+            <div className="col">
+                <CardBody item={item}/>
             </div>
-        )
+        );
     }
 }
 
-export default Card
+export default Card;
