@@ -13,9 +13,9 @@ class Cart extends Component {
                 <h2>Carrinho de Compras</h2>
                 <ul>
                     {cartItems.map((item, index) => (
-                        <li key={index}>
+                        <li key={index} className="mt-2">
                             {item.name} - {item.price}{' '}
-                            <button onClick={() => removeFromCart(index)}>Remover</button>
+                            <button className="btn btn-danger" onClick={() => removeFromCart(index)}>Remover</button>
                         </li>
                     ))}
                 </ul>

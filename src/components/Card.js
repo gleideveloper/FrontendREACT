@@ -43,9 +43,11 @@ class Card extends Component {
         return (
             <div className="col">
                 <CardBody item={item}/>
-                <button className="btn btn-primary" onClick={addToCart}>
-                    Adicionar ao Carrinho
-                </button>
+                <div className="mt-2">
+                    <button className="btn btn-primary" onClick={addToCart}>
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
         );
     }
